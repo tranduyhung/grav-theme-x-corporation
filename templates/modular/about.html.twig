@@ -1,0 +1,22 @@
+<section class="about-text ptb-100">
+    <section class="section-title">
+        <div class="container text-center">
+            <h2>{{ page.title }}</h2>
+            <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span>
+        </div>
+    </section>
+
+    <div class="container">
+    {% for column in page.header.columns %}
+        {% if loop.index % 2 == 1 %}
+        <div class="row">
+        {% endif %}
+            <div class="col-md-6">
+                <p>{{ column.content }}</p>
+            </div>
+        {% if loop.index == page.header.columns.count or loop.index % 2 == 0 %}
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+</section>

@@ -1,0 +1,36 @@
+<section class="testimonial">
+    <section class="section-title">
+        <div class="container text-center">
+            <h2>{{ page.title }}</h2>
+            <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span>
+        </div>
+    </section>
+    <div class="container">
+        <div id="testimonialSlider" class="carousel slide" data-ride="carousel">
+
+            <div class="carousel-inner" role="listbox">
+                {% for slide in page.header.slides %}
+                {% set slideClass = loop.index == 1 ? 'item active' : 'item' %}
+                <div class="{{ slideClass }}">
+                    <blockquote>
+                        <ul>
+                            <li>{{ page.media.images[slide.image].html() }}</li>
+                            <li class="name">{{ slide.name }}</li>
+                        </ul>
+                        <p>{{ slide.description }}</p>
+                    </blockquote>
+                </div>
+                {% endfor %}
+            </div>
+
+            <a class="left carousel-control" href="#testimonialSlider" role="button" data-slide="prev">
+                <span><i class="fa fa-angle-left"></i></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#testimonialSlider" role="button" data-slide="next">
+                <span><i class="fa fa-angle-right"></i></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,102 @@
+<section class="service-icon-style ptb-100">
+    <section class="section-title">
+        <div class="container text-center">
+            <h2>{{ page.title }}</h2>
+            <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span>
+        </div>
+    </section>
+    {% if page.header.solutions|length > 0 %}
+        {% if page.header.solutions|length >= 4 %}
+            {% set column_count = 4 %}
+        {% else %}
+            {% set column_count = page.header.solutions|length %}
+        {% endif %}
+    <div class="container text-center">
+        {% for solution in page.header.solutions %}
+        {% if loop.index % column_count == 1 %}
+        <div class="row">
+        {% endif %}
+        <div class="col-sm-6 col-md-{{ (12 / column_count)|round }}">
+            <div class="promo-block-wrapper clearfix">
+                <div class="promo-icon">
+                    <i class="fa {{ solution.icon }}"></i>
+                </div>
+                <div class="promo-content">
+                    <h3>{{ solution.title }}</h3>
+
+                    <p>{{ solution.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% if loop.index == page.header.solutions|length or loop.index % column_count == 0 %}
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+
+{% if page.header.hows|length > 0 or page.header.whys|length > 0 %}
+<section class="ptb-100 gray-bg">
+    <div class="container">
+        <div class="row">
+            {% if page.header.hows|length > 0 and page.header.whys|length > 0 %}
+            <div class="col-md-6 col-sm-12 x-accordion">
+            {% elseif page.header.hows|length > 0 and page.header.whys|length == 0 %}
+            <div class="col-md-12 col-sm-12 x-accordion">
+            {% endif %}
+                {% if page.header.hows|length > 0 %}
+                <h3>{{ page.header.how_heading }}</h3>
+                <div class="panel-group" id="accordionHow">
+                    {% for how in page.header.hows %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordionHow" href="#collapseHow{{ loop.index }}" aria-expanded="false" class="collapsed">
+                                    {{ how.title }}
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseHow{{ loop.index }}" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                            <div class="panel-body">
+                                {{ how.description }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+
+            {% if page.header.hows|length > 0 and page.header.whys|length > 0 %}
+            <div class="col-md-6 col-sm-12 tabWhy">
+            {% elseif page.header.hows|length == 0 and page.header.whys|length > 0 %}
+            <div class="col-md-12 col-sm-12 tabWhy">
+            {% endif %}
+                <h3>{{ page.header.why_heading }}</h3>
+                <div role="tabpanel">
+                    <ul id="tabWhy" class="nav nav-tabs nav-justified">
+                        {% for why in page.header.whys %}
+                        {% set tabClass = loop.index == 1 ? 'active' : '' %}
+                        <li class="{{ tabClass }}">
+                            <a href="#tabWhy{{ loop.index }}" data-toggle="tab" aria-expanded="true">
+                                {{ why.title }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="tab-content">
+                        {% for why in page.header.whys %}
+                        {% set tabClass = loop.index == 1 ? ' active in' : '' %}
+                        <div class="tab-pane fade{{ tabClass }}" id="tabWhy{{ loop.index }}">
+                            {{ why.description }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

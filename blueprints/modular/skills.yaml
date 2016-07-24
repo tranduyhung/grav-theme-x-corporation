@@ -1,0 +1,27 @@
+title: Carousel
+'@extends':
+    type: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        skills:
+          type: tab
+          title: Skills
+          fields:
+            header.skills:
+              name: skills
+              type: list
+              label: Skills
+              fields:
+                .name:
+                  type: text
+                  label: Name
+                  help: Skill's name.
+                .percentage:
+                  type: text
+                  label: Percentage
+                  help: Skill's percentage.

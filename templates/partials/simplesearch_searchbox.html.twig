@@ -1,0 +1,28 @@
+<div class="head-search">
+    <div class="input-group">
+        <input type="text" class="form-control header-search-input" placeholder="{{"PLUGIN_SIMPLESEARCH.SEARCH_PLACEHOLDER"|t}}" value="{{ query }}" data-header-search-input="{{ base_url }}{{ config.plugins.simplesearch.route}}/query" />
+        {% if config.plugins.simplesearch.display_button %}
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary header-search-submit">Search</button>
+            </span>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+jQuery(document).ready(function($){
+    var input = $('[data-header-search-input]');
+
+    input.on('keypress', function(event) {
+        if (event.which == 13 && input.val().length >= {{ config.get('plugins.simplesearch.min_query_length', 3) }}) {
+            event.preventDefault();
+            window.location.href = input.data('header-search-input') + '{{ config.system.param_sep }}' + input.val();
+        }
+    });
+
+    $('.header-search-submit').on('click', function(event) {
+        event.preventDefault();
+        window.location.href = input.data('header-search-input') + '{{ config.system.param_sep }}' + input.val();
+    });
+});
+</script>

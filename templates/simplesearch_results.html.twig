@@ -1,0 +1,59 @@
+{% extends 'partials/simplesearch_base.html.twig' %}
+
+{% block content %}
+<section class="single-page-title">
+    <div class="container text-center">
+        <h2>{{ page.title }}</h2>
+    </div>
+</section>
+
+<section class="ptb-100">
+    <div class="container">
+        <div class="row">
+        <div class="head-search">
+            <form role="form">
+                <div class="input-group">
+                    <input type="text" class="form-control search-input" placeholder="{{"PLUGIN_SIMPLESEARCH.SEARCH_PLACEHOLDER"|t}}" value="{{ query }}" data-search-input="{{ base_url }}{{ config.plugins.simplesearch.route}}/query" />
+                    {% if config.plugins.simplesearch.display_button %}
+                        <span class="input-group-btn">
+                          <button type="submit" class="btn btn-primary search-submit">Search</button>
+                        </span>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+
+        {% if search_results %}
+        <p>
+            {% if search_results.count == 1 %}
+                {{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS_SUMMARY_SINGULAR"|t(query) }}
+            {% else %}
+                {{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS_SUMMARY_PLURAL"|t(query, search_results.count) }}
+            {% endif %}
+        </p>
+        {% for page in search_results %}
+            {% include 'partials/simplesearch_item.html.twig' with {'page':page} %}
+        {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+</section>
+
+<script>
+jQuery(document).ready(function($){
+    var input = $('[data-search-input]');
+
+    input.on('keypress', function(event) {
+        if (event.which == 13 && input.val().length >= {{ config.get('plugins.simplesearch.min_query_length', 3) }}) {
+            event.preventDefault();
+            window.location.href = input.data('search-input') + '{{ config.system.param_sep }}' + input.val();
+        }
+    });
+
+    $('.search-submit').on('click', function(event) {
+        event.preventDefault();
+        window.location.href = input.data('search-input') + '{{ config.system.param_sep }}' + input.val();
+    });
+});
+</script>
+{% endblock %}

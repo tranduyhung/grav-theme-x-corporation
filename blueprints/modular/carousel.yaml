@@ -1,0 +1,35 @@
+title: Carousel
+'@extends':
+    type: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        slides:
+          type: tab
+          title: Slides
+          fields:
+            header.slides:
+              name: slides
+              type: list
+              label: Slides
+              fields:
+                .heading:
+                  type: text
+                  label: Heading
+                  help: Slide's heading.
+                .description:
+                  type: textarea
+                  label: Description
+                  help: Slide's description.
+                .background_image:
+                  type: text
+                  label: Background Image
+                  help: Slide's background image.
+                .background_image_description:
+                  type: text
+                  label: Background Image's Description
+                  help: Description for slide's background image.

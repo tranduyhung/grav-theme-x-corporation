@@ -1,0 +1,20 @@
+<section class="client-logo ptb-100">
+    <section class="section-title">
+        <div class="container text-center">
+            <h2>{{ page.title }}</h2>
+            <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            {% for client in page.header.clients %}
+            <div class="col-md-2 col-sm-4 col-xs-6 section-margin">
+                <a href="{{ client.url }}">
+                    {{ page.media.images[client.image].html('', client.name) }}
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!--end of .container -->
+</section>

@@ -1,0 +1,31 @@
+title: Testimonials
+'@extends':
+    type: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        slides:
+          type: tab
+          title: Testimonials
+          fields:
+            header.slides:
+              name: slides
+              type: list
+              label: Testimonials
+              fields:
+                .name:
+                  type: text
+                  label: Name
+                  help: Client's name.
+                .image:
+                  type: text
+                  label: Image
+                  help: Client's image.
+                .description:
+                  type: textarea
+                  label: Testimonial
+                  help: Client's testimonial.

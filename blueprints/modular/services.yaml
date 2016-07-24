@@ -1,0 +1,35 @@
+title: Services
+'@extends':
+    type: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        services:
+          type: tab
+          title: Services
+          fields:
+            header.services:
+              name: services
+              type: list
+              label: Services
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                  help: Service's title.
+                .description:
+                  type: textarea
+                  label: Description
+                  help: Service's description.
+                .url:
+                  type: text
+                  label: URL
+                  help: URL to service page.
+                .image:
+                  type: text
+                  label: Image
+                  help: Service's image.

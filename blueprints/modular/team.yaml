@@ -1,0 +1,35 @@
+title: Team
+'@extends':
+    type: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        members:
+          type: tab
+          title: Members
+          fields:
+            header.members:
+              name: members
+              type: list
+              label: Members
+              fields:
+                .name:
+                  type: text
+                  label: Name
+                  help: Member's name.
+                .position:
+                  type: text
+                  label: Position
+                  help: Member's position.
+                .url:
+                  type: text
+                  label: URL
+                  help: URL of member page.
+                .image:
+                  type: text
+                  label: Image
+                  help: Member's image.

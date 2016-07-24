@@ -1,0 +1,23 @@
+title: About
+'@extends':
+    type: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        columns:
+          type: tab
+          title: About Content
+          fields:
+            header.columns:
+              name: columns
+              type: list
+              label: Columns
+              fields:
+                .content:
+                  type: textarea
+                  label: Content
+                  help: Column's content.

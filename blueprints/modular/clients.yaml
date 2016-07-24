@@ -1,0 +1,31 @@
+title: Clients
+'@extends':
+    type: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        clients:
+          type: tab
+          title: Clients
+          fields:
+            header.clients:
+              name: clients
+              type: list
+              label: Clients
+              fields:
+                .name:
+                  type: text
+                  label: Name
+                  help: Client's name.
+                .image:
+                  type: text
+                  label: Image
+                  help: Client's image.
+                .url:
+                  type: text
+                  label: Website
+                  help: Client's website.

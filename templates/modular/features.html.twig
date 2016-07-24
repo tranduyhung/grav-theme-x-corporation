@@ -1,0 +1,33 @@
+<section class="x-features">
+    <section class="section-title">
+        <div class="container text-center">
+            <h2>{{ page.title }}</h2>
+            <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 img-left">
+                {% if page.header.image != '' %}
+                {{ page.media.images[page.header.image].html() }}
+                {% endif %}
+            </div>
+            <div class="col-md-6">
+                {% for feature in page.header.features %}
+                <div class="promo-block-wrapper clearfix">
+                    <div class="promo-icon">
+                        {% if feature.icon != '' %}
+                        <i class="fa {{ feature.icon }}"></i>
+                        {% endif %}
+                    </div>
+                    <div class="promo-content">
+                        <h3>{{ feature.title }}</h3>
+
+                        <p>{{ feature.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,73 @@
+title: Skills
+'@extends':
+    type: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        solutions:
+          type: tab
+          title: Solutions
+          fields:
+            header.solutions:
+              name: solutions
+              type: list
+              label: Solutions
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                  help: Solution's title.
+                .description:
+                  type: textarea
+                  label: Description
+                  help: Solution's description.
+                .icon:
+                  type: text
+                  label: FontAwesome Icon
+                  help: 'Example: fa-line-chart.'
+        hows:
+          type: tab
+          title: How
+          fields:
+            header.how_heading:
+              type: text
+              label: How Heading
+              help: How's heading.
+            header.hows:
+              name: hows
+              type: list
+              label: How
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                  help: Title.
+                .description:
+                  type: textarea
+                  label: Description
+                  help: Description.
+        whys:
+          type: tab
+          title: Why
+          fields:
+            header.why_heading:
+              type: text
+              label: Why Heading
+              help: Why's heading.
+            header.whys:
+              name: whys
+              type: list
+              label: Why
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                  help: Title.
+                .description:
+                  type: textarea
+                  label: Description
+                  help: Description.

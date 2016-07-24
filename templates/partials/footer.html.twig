@@ -1,0 +1,51 @@
+<footer class="footer">
+    {% if theme_config.footer_blocks|length > 0 %}
+    <div class="footer-widget-section">
+        <div class="container text-center">
+            <div class="row">
+                {% for block in theme_config.footer_blocks %}
+                <div class="col-sm-{{ (12 / theme_config.footer_blocks|length)|round }} footer-block">
+                    <div class="footer-widget widget_text">
+                        {% if block.title %}
+                        <h3>{{ block.title }}</h3>
+                        {% endif %}
+                        {% if block.logo is null %}
+                        <div class="footer-logo">
+                            <a href="{{ base_url == '' ? '/' : base_url }}">
+                                <img src="{{ url('theme://img/' ~ theme_config.logo) }}" alt="">
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% if block.content %}
+                        {{ block.content }}
+                        {% endif %}
+                        {% if block.icons is null and theme_config.footer_icons|length > 0 %}
+                        <ul class="list-inline social-links">
+                            {% for icon in theme_config.footer_icons %}
+                            <li><a href="{{ icon.url }}"><i class="fa {{ icon.icon }}"></i></a></li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="copyright-section">
+        <div class="container clearfix">
+            <span class="copytext">{{ theme_config.copyright }}</span>
+
+            <ul class="list-inline pull-right">
+            {% for page in pages.children.visible %}
+                {% if page.header.shown_in_footer %}
+                {% set activeClass = (page.active) ? 'active' : '' %}
+                <li class="{{ activeClass }}"><a href="{{ page.url }}">{{ page.menu }}</a></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</footer>

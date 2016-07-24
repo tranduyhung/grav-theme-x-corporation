@@ -1,0 +1,35 @@
+title: map
+'@extends':
+    type: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        map:
+          type: tab
+          title: Google Maps
+          fields:
+            header.latitude:
+              type: text
+              label: Latitude
+              help: Location's latitude.
+            header.longitude:
+              type: text
+              label: Longitude
+              help: Location's longitude.
+            header.zoom:
+              type: text
+              label: Zoom Level
+              help: Enter a number, for example 10
+              placeholder: Enter a number, for example 10
+            header.marker:
+              type: text
+              label: Marker Image
+              help: Image for location's marker in the same folder.
+            header.api_key:
+              type: text
+              label: Google Maps API Key
+              help: Google Maps API key.

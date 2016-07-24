@@ -1,0 +1,31 @@
+<section class="skills ptb-100 gray-bg">
+    <section class="section-title">
+        <div class="container text-center">
+            <h2>{{ page.title }}</h2>
+            <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                {{ page.content }}
+            </div>
+            <div class="col-md-6 x-progress">
+                <div class="progress-wrapper">
+                    {% for skill in page.header.skills %}
+                    <div class="progress-item">
+                        <span class="progress-title">{{ skill.name }}</span>
+
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-dealy" role="progressbar" aria-valuenow="{{ skill.percentage }}"
+                                 aria-valuemin="0" aria-valuemax="100" style="width: {{ skill.percentage }}%;"></div>
+                        </div>
+                        <span class="progress-percent">{{ skill.percentage }}%</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,32 @@
+<section class="team ptb-100">
+    <section class="section-title">
+        <div class="container text-center">
+            <h2>{{ page.title }}</h2>
+            <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span>
+        </div>
+    </section>
+    <div class="container">
+    {% for member in page.header.members %}
+
+        {% if loop.index % 3 == 1 %}
+        <div class="row">
+        {% endif %}
+            <div class="col-md-4">
+                <figure class="thumbnail">
+                    <a href="{{ member.url }}">
+                        {{ page.media.images[member.image].html('', member.name) }}
+                    </a>
+                    <figcaption class="caption text-center">
+                        <h3>{{ member.name }} -
+                            <small>{{ member.position}}</small>
+                        </h3>
+                    </figcaption>
+                </figure>
+            </div>
+        {% if loop.index == page.header.members.count or loop.index % 3 == 0 %}
+        </div>
+        {% endif %}
+
+    {% endfor %}
+    </div>
+</section>

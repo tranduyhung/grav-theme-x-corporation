@@ -1,0 +1,78 @@
+name: X-Corporation
+description: "Grav Theme based on X-Corporation HTML theme of uiCookies."
+version: 1.0.0
+icon: briefcase
+author:
+  name: Hung Tran
+  email: hungtran@peaceofmindwebsite.com
+  url: http://www.peaceofmindwebsite.com
+homepage: https://github.com/tranduyhung/grav-theme-x-corporation
+demo: http://www.peaceofmindwebsite.com/skeletons/x-corporation
+keywords: corporate, corporation, theme, template, bootstrap, responsive, html5, uicookies, business, agency, lightweight, fast, company, tech startup, consultancy, firm, creative, studio,
+bugs: https://github.com/tranduyhung/grav-theme-x-corporation/issues
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    logo:
+        type: text
+        label: Logo
+        placeholder: Filename of logo image in template's "img" folder
+        help: Filename of logo image in template's "img" folder.
+    copyright:
+        type: textarea
+        label: Copyright Text
+        placeholder: Text or HTML code
+    google_maps_api_key:
+        type: text
+        label: Google Maps API Key
+        placeholder: Get your Google Maps API key at https://console.developers.google.com/
+    footer_icons:
+        type: list
+        label: Footer's Icons
+        help: Shown in footer block.
+        fields:
+            .icon:
+                type: text
+                label: Font Awesome's Icon
+                placeholder: 'fa-facebook'
+
+            .url:
+                type: text
+                label: Link
+                placeholder: 'https://www.facebook.com/your-page'
+
+    footer_blocks:
+        type: list
+        label: Footer's Block
+        help: Shown in footer.
+        fields:
+            .title:
+                type: text
+                label: Title
+                placeholder: Block title
+            .content:
+                type: textarea
+                label: Text or HTML Code
+                placeholder: Text or HTML code
+            .logo:
+                type: toggle
+                toggleable: false
+                label: Show Logo
+                help: Show site's logo.
+                options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                validate:
+                    type: bool
+            .icons:
+                type: toggle
+                toggleable: false
+                label: Show Footer Icons
+                help: Show footer's icons
+                options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                validate:
+                    type: bool

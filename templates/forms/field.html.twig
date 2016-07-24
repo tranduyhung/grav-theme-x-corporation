@@ -1,0 +1,35 @@
+{% set originalValue = originalValue is defined ? originalValue : value %}
+{% set value = (value is null ? field.default : value) %}
+
+{% block field %}
+    {% block contents %}
+        <div class="form-group user-{{ field.name }}">
+            <label for="{% if field.id is defined %}{{ field.id|e }}{% else %}{{ field.name|e }}{% endif %}" class="sr-only">{{ field.label }}</label>
+            {% block group %}
+                {% block input %}
+                    <input
+                        {# required attribute structures #}
+                        name="{{ (scope ~ field.name)|fieldName }}"
+                        value="{{ value|e('html_attr')|join(', ') }}"
+                        {# input attribute structures #}
+                        {% block input_attributes %}
+                            {% if field.classes is defined %}class="form-control {{ field.classes }}" {% endif %}
+                            {% if field.id is defined %}id="{{ field.id|e }}" {% endif %}
+                            {% if field.style is defined %}style="{{ field.style|e }}" {% endif %}
+                            {% if field.disabled %}disabled="disabled"{% endif %}
+                            {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}
+                            {% if field.autofocus in ['on', 'true', 1] %}autofocus="autofocus"{% endif %}
+                            {% if field.novalidate in ['on', 'true', 1] %}novalidate="novalidate"{% endif %}
+                            {% if field.readonly in ['on', 'true', 1] %}readonly="readonly"{% endif %}
+                            {% if field.autocomplete in ['on', 'off'] %}autocomplete="{{ field.autocomplete }}"{% endif %}
+                            {% if field.validate.required in ['on', 'true', 1] %}required="required"{% endif %}
+                            {% if field.validate.pattern %}pattern="{{ field.validate.pattern }}"{% endif %}
+                            {% if field.validate.message %}title="{{ field.validate.message|e|t }}"
+                            {% elseif field.title is defined %}title="{{ field.title|e|t }}" {% endif %}
+                        {% endblock %}
+                        />
+                {% endblock %}
+            {% endblock %}
+        </div>
+    {% endblock %}
+{% endblock %}
