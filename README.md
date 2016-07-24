@@ -15,7 +15,7 @@ X-Corporation theme is a port of [X-Corporation](https://uicookies.com/demo/#x_c
 * Modern browser compatible
 * Infinitely and extensively customizable
 * Sleek interaction and smooth scrolling
-* Usage Of Latest Technology: HTML5, CSS3, JavaScript, Bootstrap 3 framework, Font Awesome, retina ready,
+* Usage Of Latest Technology: HTML5, CSS3, JavaScript, Bootstrap 3 framework, Font Awesome, retina ready
 
 # Installation
 
