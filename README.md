@@ -2,7 +2,7 @@
 
 ![X-Corporation Theme screenshot](screenshot.jpg)
 
-X-Corporation theme is a port of [X-Corporation](https://uicookies.com/demo/#x_corporation) by [uiCookies UP](https://uicookies.com/).
+X-Corporation theme is a port of [X-Corporation](https://uicookies.com/demo/#x_corporation) by [uiCookies](https://uicookies.com/).
 
 # Features
 
