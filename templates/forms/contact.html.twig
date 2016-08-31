@@ -1,34 +1,59 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
+        {% if form.message %}<div class="alert alert-success"><p>{{ form.message }}</p></div>{% endif %}
+        {% set scope = scope ?: 'data.' %}
+        {% set multipart = '' %}
+        {% set method = form.method|upper|default('POST') %}
+
+        {% for field in form.fields %}
+            {% if (method == 'POST' and field.type == 'file') %}
+                {% set multipart = ' enctype="multipart/form-data"' %}
+            {% endif %}
+        {% endfor %}
+
+        {% set action = form.action ? base_url ~ form.action : page.url %}
+        {% if (action == base_url_relative) %}
+            {% set action = base_url_relative ~ '/' ~ page.slug %}
+        {% endif %}
+
         <form name="{{ form.name }}"
-              action="{{ form.action ? base_url ~ form.action : page.url }}"
-              method="{{ method }}"{{ multipart }}>
+              action="{{ action }}"
+              method="{{ method }}"{{ multipart }}
+              {% block form_classes %}
+              {% if form.classes %}class="{{ form.classes }}"{% endif %}
+              {% endblock %}
+        >
+
             <div class="row">
-                {% for field in form.fields %}
-                    {% set value = form.value(field.name) %}
-                        {% if field.name == 'name' %}
-                        <div class="col-md-6">
-                        {% elseif field.name == 'message' %}
-                        </div>
-                        <div class="col-md-6">
-                        {% endif %}
+            {% for field in form.fields %}
+                {% set value = form.value(field.name) %}
+                {% if field.name == 'name' %}
+                <div class="col-md-6">
+                {% elseif field.name == 'message' %}
+                </div>
+                <div class="col-md-6">
+                {% endif %}
 
-                        {% include "forms/fields/#{field.type}/#{field.type}.html.twig" %}
+                    {% include "forms/fields/#{field.type}/#{field.type}.html.twig" ignore missing %}
 
-                        {% if field.name == 'message' %}
-                        </div>
-                        {% endif %}
-                {% endfor %}
+                {% if field.name == 'message' %}
+                </div>
+                {% endif %}
+            {% endfor %}
             </div>
 
             {% for button in form.buttons %}
-                {% set type = button.type|default('submit') %}
-                {% if type == 'submit' %}
-                <button class="{{ button.classes|default('btn btn-primary') }}" type="{{ type }}">{{ button.value|t|default('Submit') }}</button>
-                {% else %}
-                <button class="{{ button.classes|default('btn') }}" type="{{ type }}">{{ button.value|t|default('Submit') }}</button><
-                {% endif %}
+                <button
+                    {% block button_classes %}
+                    class="{{ button.classes|default('button') }}"
+                    {% endblock %}
+                    type="{{ button.type|default('submit') }}"
+                >
+                    {{ button.value|t|default('Submit') }}
+                </button>
             {% endfor %}
+
+          {{ nonce_field('form', 'form-nonce') }}
         </form>
     </div>
 </div>
