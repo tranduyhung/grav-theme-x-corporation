@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <form name="{{ form.name }}"
+              {% if form.id %}id="{{ form.id }}"{% endif %}
               action="{{ form.action ? base_url ~ form.action : page.url }}"
               method="{{ method }}"{{ multipart }}>
             <div class="row">
@@ -19,6 +20,7 @@
                         </div>
                         {% endif %}
                 {% endfor %}
+                {% include "forms/fields/formname/formname.html.twig" %}
             </div>
 
             {% for button in form.buttons %}
