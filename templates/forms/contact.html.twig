@@ -1,59 +1,81 @@
-<div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        {% if form.message %}<div class="alert alert-success"><p>{{ form.message }}</p></div>{% endif %}
-        {% set scope = scope ?: 'data.' %}
-        {% set multipart = '' %}
-        {% set method = form.method|upper|default('POST') %}
+{% if form.message %}
+    {% if form.inline_errors and form.messages %}
+        <div class="alert notices {{ form.message_color ?: 'green' }}"><p>{{ "FORM.VALIDATION_FAIL"|t|raw }}</p></div>
+    {% else %}
+        <div class="alert notices {{ form.message_color ?: 'green' }}"><p>{{ form.message|raw }}</p></div>
+    {% endif %}
+{% endif %}
+{% set scope = scope ?: 'data.' %}
+{% set multipart = '' %}
+{% set method = form.method|upper|default('POST') %}
 
-        {% for field in form.fields %}
-            {% if (method == 'POST' and field.type == 'file') %}
-                {% set multipart = ' enctype="multipart/form-data"' %}
-            {% endif %}
-        {% endfor %}
+{% for field in form.fields %}
+    {% if (method == 'POST' and field.type == 'file') %}
+        {% set multipart = ' enctype="multipart/form-data"' %}
+    {% endif %}
+{% endfor %}
 
-        {% set action = form.action ? base_url ~ form.action : page.url %}
-        {% if (action == base_url_relative) %}
-            {% set action = base_url_relative ~ '/' ~ page.slug %}
-        {% endif %}
+{% set action = form.action ? base_url ~ form.action : uri.url() %}
 
-        <form name="{{ form.name }}"
-              action="{{ action }}"
-              method="{{ method }}"{{ multipart }}
-              {% block form_classes %}
-              {% if form.classes %}class="{{ form.classes }}"{% endif %}
-              {% endblock %}
-        >
+{% if (action == base_url_relative) %}
+    {% set action = base_url_relative ~ '/' ~ page.slug %}
+{% endif %}
 
-            <div class="row">
-            {% for field in form.fields %}
-                {% set value = form.value(field.name) %}
-                {% if field.name == 'name' %}
-                <div class="col-md-6">
-                {% elseif field.name == 'message' %}
-                </div>
-                <div class="col-md-6">
-                {% endif %}
+<form name="{{ form.name }}"
+      action="{{ action }}"
+      method="{{ method }}"{{ multipart }}
+      {% if form.id %}id="{{ form.id }}"{% endif %}
+      {% block form_classes %}
+      {% if form.classes %}class="{{ form.classes }}"{% endif %}
+      {% endblock %}
+>
 
-                    {% include "forms/fields/#{field.type}/#{field.type}.html.twig" ignore missing %}
+  {% block inner_markup_fields_start %}{% endblock %}
 
-                {% if field.name == 'message' %}
-                </div>
-                {% endif %}
-            {% endfor %}
-            </div>
+  <div class="row">
+  {% for field in form.fields %}
+    {% if field.type == 'file' %}
+        {% do assets.addJs('plugin://form/assets/form.min.js') %}
+    {% endif %}
+    {% set value = form.value(field.name) %}
 
-            {% for button in form.buttons %}
-                <button
-                    {% block button_classes %}
-                    class="{{ button.classes|default('button') }}"
-                    {% endblock %}
-                    type="{{ button.type|default('submit') }}"
-                >
-                    {{ button.value|t|default('Submit') }}
-                </button>
-            {% endfor %}
-
-          {{ nonce_field('form', 'form-nonce') }}
-        </form>
+    {% if field.name == 'name' %}
+    <div class="col-md-6">
+    {% elseif field.name == 'message' %}
     </div>
-</div>
+    <div class="col-md-6">
+    {% endif %}
+
+        {% include "forms/fields/#{field.type}/#{field.type}.html.twig" ignore missing %}
+
+    {% if field.name == 'message' %}
+    </div>
+    {% endif %}
+  {% endfor %}
+  </div>
+
+  {% include "forms/fields/formname/formname.html.twig" %}
+
+  {% block inner_markup_fields_end %}{% endblock %}
+
+  {% block inner_markup_buttons_start %}
+  <div class="buttons">
+  {% endblock %}
+
+  {% for button in form.buttons %}
+      <button
+            {% block button_classes %}
+            class="{{ button.classes|default('button') }}"
+            {% endblock %}
+            type="{{ button.type|default('submit') }}"
+        >
+            {{ button.value|t|default('Submit') }}
+        </button>
+  {% endfor %}
+
+  {% block inner_markup_buttons_end %}
+  </div>
+  {% endblock %}
+
+  {{ nonce_field('form', 'form-nonce')|raw }}
+</form>
