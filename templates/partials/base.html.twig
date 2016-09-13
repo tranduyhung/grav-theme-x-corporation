@@ -26,10 +26,14 @@
                 <div>
                     <div>
                         <ul id="menu">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                        {% for p in pages.children.visible %}
+                            {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
+                            {% if p.children.visible.count == 0 %}
+                                <li class="{{ current_page }}">
+                                    <a href="{{ p.url }}">{{ p.menu }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
                         </ul>
                     </div>
                 </div>
