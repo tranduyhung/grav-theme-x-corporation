@@ -1,31 +1,38 @@
 title: Testimonials
 '@extends':
-    type: default
+        type: default
 
 form:
-  fields:
-    tabs:
-      type: tabs
-      active: 1
-      fields:
-        slides:
-          type: tab
-          title: Testimonials
-          fields:
-            header.slides:
-              name: slides
-              type: list
-              label: Testimonials
-              fields:
-                .name:
-                  type: text
-                  label: Name
-                  help: Client's name.
-                .image:
-                  type: text
-                  label: Image
-                  help: Client's image.
-                .description:
-                  type: textarea
-                  label: Testimonial
-                  help: Client's testimonial.
+    fields:
+        tabs:
+            type: tabs
+            active: 1
+            fields:
+                slides:
+                    type: tab
+                    title: THEME_X_CORPORATION.ADMIN.TESTIMONIALS.LABEL
+                    fields:
+                        header.slides:
+                            name: slides
+                            type: list
+                            style: vertical
+                            label: THEME_X_CORPORATION.ADMIN.TESTIMONIALS.LABEL
+                            fields:
+                                .name:
+                                    type: text
+                                    label: THEME_X_CORPORATION.ADMIN.TESTIMONIALS.NAME.LABEL
+                                    help: THEME_X_CORPORATION.ADMIN.TESTIMONIALS.NAME.HELP
+                                .image:
+                                    type: filepicker
+                                    preview_images: true
+                                    acccept:
+                                        - .png
+                                        - .jpg
+                                        - .gif
+                                    label: THEME_X_CORPORATION.ADMIN.TESTIMONIALS.IMAGE.LABEL
+                                    help: THEME_X_CORPORATION.ADMIN.TESTIMONIALS.IMAGE.HELP
+                                .description:
+                                    type: textarea
+                                    rows: 5
+                                    label: THEME_X_CORPORATION.ADMIN.TESTIMONIALS.DESCRIPTION.LABEL
+                                    help: THEME_X_CORPORATION.ADMIN.TESTIMONIALS.DESCRIPTION.HELP

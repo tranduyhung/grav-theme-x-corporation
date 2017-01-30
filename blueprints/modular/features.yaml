@@ -1,31 +1,33 @@
 title: Features
 '@extends':
-    type: default
+        type: default
 
 form:
-  fields:
-    tabs:
-      type: tabs
-      active: 1
-      fields:
-        features:
-          type: tab
-          title: Features
-          fields:
-            header.features:
-              name: features
-              type: list
-              label: Features
-              fields:
-                .title:
-                  type: text
-                  label: Title
-                  help: Feature's title.
-                .icon:
-                  type: text
-                  label: FontAwesome Icon
-                  help: 'Example: fa-line-chart.'
-                .description:
-                  type: textarea
-                  label: Description
-                  help: Feature's description.
+    fields:
+        tabs:
+            type: tabs
+            active: 1
+            fields:
+                features:
+                    type: tab
+                    title: THEME_X_CORPORATION.ADMIN.FEATURES.LABEL
+                    fields:
+                        header.features:
+                            name: features
+                            type: list
+                            style: vertical
+                            label: THEME_X_CORPORATION.ADMIN.FEATURES.LABEL
+                            fields:
+                                .title:
+                                    type: text
+                                    label: THEME_X_CORPORATION.ADMIN.FEATURES.TITLE.LABEL
+                                    help: THEME_X_CORPORATION.ADMIN.FEATURES.TITLE.HELP
+                                .icon:
+                                    type: text
+                                    label: THEME_X_CORPORATION.ADMIN.FEATURES.ICON.LABEL
+                                    help: THEME_X_CORPORATION.ADMIN.FEATURES.ICON.HELP
+                                .description:
+                                    type: textarea
+                                    rows: 5
+                                    label: THEME_X_CORPORATION.ADMIN.FEATURES.DESCRIPTION.LABEL
+                                    help: THEME_X_CORPORATION.ADMIN.FEATURES.DESCRIPTION.HELP

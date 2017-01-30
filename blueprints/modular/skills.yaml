@@ -1,27 +1,28 @@
-title: Carousel
+title: Skills
 '@extends':
-    type: default
+        type: default
 
 form:
-  fields:
-    tabs:
-      type: tabs
-      active: 1
-      fields:
-        skills:
-          type: tab
-          title: Skills
-          fields:
-            header.skills:
-              name: skills
-              type: list
-              label: Skills
-              fields:
-                .name:
-                  type: text
-                  label: Name
-                  help: Skill's name.
-                .percentage:
-                  type: text
-                  label: Percentage
-                  help: Skill's percentage.
+    fields:
+        tabs:
+            type: tabs
+            active: 1
+            fields:
+                skills:
+                    type: tab
+                    title: THEME_X_CORPORATION.ADMIN.SKILLS.LABEL
+                    fields:
+                        header.skills:
+                            name: skills
+                            type: list
+                            style: vertical
+                            label: THEME_X_CORPORATION.ADMIN.SKILLS.LABEL
+                            fields:
+                                .name:
+                                    type: text
+                                    label: THEME_X_CORPORATION.ADMIN.SKILLS.NAME.LABEL
+                                    help: THEME_X_CORPORATION.ADMIN.SKILLS.NAME.HELP
+                                .percentage:
+                                    type: text
+                                    label: THEME_X_CORPORATION.ADMIN.SKILLS.PERCENTAGE.LABEL
+                                    help: THEME_X_CORPORATION.ADMIN.SKILLS.PERCENTAGE.HELP

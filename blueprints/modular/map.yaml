@@ -1,35 +1,39 @@
-title: map
+title: Map
 '@extends':
-    type: default
+        type: default
 
 form:
-  fields:
-    tabs:
-      type: tabs
-      active: 1
-      fields:
-        map:
-          type: tab
-          title: Google Maps
-          fields:
-            header.latitude:
-              type: text
-              label: Latitude
-              help: Location's latitude.
-            header.longitude:
-              type: text
-              label: Longitude
-              help: Location's longitude.
-            header.zoom:
-              type: text
-              label: Zoom Level
-              help: Enter a number, for example 10
-              placeholder: Enter a number, for example 10
-            header.marker:
-              type: text
-              label: Marker Image
-              help: Image for location's marker in the same folder.
-            header.api_key:
-              type: text
-              label: Google Maps API Key
-              help: Google Maps API key.
+    fields:
+        tabs:
+            type: tabs
+            active: 1
+            fields:
+                map:
+                    type: tab
+                    title: THEME_X_CORPORATION.ADMIN.GOOGLE_MAPS.LABEL
+                    fields:
+                        header.latitude:
+                            type: text
+                            label: THEME_X_CORPORATION.ADMIN.LATITUDE.LABEL
+                            help: THEME_X_CORPORATION.ADMIN.LATITUDE.HELP
+                        header.longitude:
+                            type: text
+                            label: THEME_X_CORPORATION.ADMIN.LONGITUDE.LABEL
+                            help: THEME_X_CORPORATION.ADMIN.LONGITUDE.HELP
+                        header.zoom:
+                            type: text
+                            label: THEME_X_CORPORATION.ADMIN.ZOOM.LABEL
+                            help: THEME_X_CORPORATION.ADMIN.ZOOM.HELP
+                        header.marker:
+                            type: filepicker
+                            preview_images: true
+                            acccept:
+                                - .png
+                                - .jpg
+                                - .gif
+                            label: THEME_X_CORPORATION.ADMIN.MARKER.LABEL
+                            help: THEME_X_CORPORATION.ADMIN.MARKER.HELP
+                        header.api_key:
+                            type: text
+                            label: THEME_X_CORPORATION.ADMIN.API_KEY.LABEL
+                            help: THEME_X_CORPORATION.ADMIN.API_KEY.HELP

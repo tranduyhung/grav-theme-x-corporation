@@ -1,6 +1,6 @@
 name: X-Corporation
 description: "Grav Theme based on X-Corporation HTML theme of uiCookies."
-version: 1.0.3
+version: 1.1.0
 icon: briefcase
 author:
   name: Hung Tran
@@ -13,66 +13,72 @@ bugs: https://github.com/tranduyhung/grav-theme-x-corporation/issues
 license: MIT
 
 form:
-  validation: loose
-  fields:
-    logo:
-        type: text
-        label: Logo
-        placeholder: Filename of logo image in template's "img" folder
-        help: Filename of logo image in template's "img" folder.
-    copyright:
-        type: textarea
-        label: Copyright Text
-        placeholder: Text or HTML code
-    google_maps_api_key:
-        type: text
-        label: Google Maps API Key
-        placeholder: Get your Google Maps API key at https://console.developers.google.com/
-    footer_icons:
-        type: list
-        label: Footer's Icons
-        help: Shown in footer block.
-        fields:
-            .icon:
-                type: text
-                label: Font Awesome's Icon
-                placeholder: 'fa-facebook'
-
-            .url:
-                type: text
-                label: Link
-                placeholder: 'https://www.facebook.com/your-page'
-
-    footer_blocks:
-        type: list
-        label: Footer's Block
-        help: Shown in footer.
-        fields:
-            .title:
-                type: text
-                label: Title
-                placeholder: Block title
-            .content:
-                type: textarea
-                label: Text or HTML Code
-                placeholder: Text or HTML code
-            .logo:
-                type: toggle
-                toggleable: false
-                label: Show Logo
-                help: Show site's logo.
-                options:
-                    1: PLUGIN_ADMIN.YES
-                    0: PLUGIN_ADMIN.NO
-                validate:
-                    type: bool
-            .icons:
-                type: toggle
-                toggleable: false
-                label: Show Footer Icons
-                help: Show footer's icons
-                options:
-                    1: PLUGIN_ADMIN.YES
-                    0: PLUGIN_ADMIN.NO
-                validate:
-                    type: bool
+    validation: loose
+    fields:
+        logo:
+            type: filepicker
+            folder: 'theme@:/img'
+            preview_images: true
+            acccept:
+                - .png
+                - .jpg
+                - .gif
+            label: THEME_X_CORPORATION.ADMIN.LOGO.LABEL
+            help: THEME_X_CORPORATION.ADMIN.LOGO.HELP
+        copyright:
+            type: textarea
+            label: THEME_X_CORPORATION.ADMIN.COPYRIGHT_TEXT.LABEL
+            help: THEME_X_CORPORATION.ADMIN.COPYRIGHT_TEXT.HELP
+        google_maps_api_key:
+            type: text
+            label: THEME_X_CORPORATION.ADMIN.GOOGLE_MAPS_API_KEY.LABEL
+            help: THEME_X_CORPORATION.ADMIN.GOOGLE_MAPS_API_KEY.HELP
+        footer_icons:
+            type: list
+            label: THEME_X_CORPORATION.ADMIN.FOOTER_ICONS.LABEL
+            help: THEME_X_CORPORATION.ADMIN.FOOTER_ICONS.HELP
+            style: vertical
+            fields:
+                .icon:
+                    type: text
+                    label: THEME_X_CORPORATION.ADMIN.FOOTER_ICONS.ICON.LABEL
+                    placeholder: THEME_X_CORPORATION.ADMIN.FOOTER_ICONS.ICON.HELP
+                .url:
+                    type: text
+                    label: THEME_X_CORPORATION.ADMIN.FOOTER_ICONS.URL.LABEL
+                    placeholder: THEME_X_CORPORATION.ADMIN.FOOTER_ICONS.URL.HELP
+        footer_blocks:
+            type: list
+            label: THEME_X_CORPORATION.ADMIN.FOOTER_BLOCKS.LABEL
+            help: THEME_X_CORPORATION.ADMIN.FOOTER_BLOCKS.DESC
+            style: vertical
+            fields:
+                .title:
+                    type: text
+                    label: THEME_X_CORPORATION.ADMIN.FOOTER_BLOCKS.TITLE.LABEL
+                    placeholder: THEME_X_CORPORATION.ADMIN.FOOTER_BLOCKS.TITLE.HELP
+                .content:
+                    type: textarea
+                    rows: 5
+                    label: THEME_X_CORPORATION.ADMIN.CONTENT.LABEL
+                    placeholder: THEME_X_CORPORATION.ADMIN.CONTENT.HELP
+                .logo:
+                    type: toggle
+                    toggleable: false
+                    label: THEME_X_CORPORATION.ADMIN.FOOTER_BLOCKS.LOGO.LABEL
+                    help: THEME_X_CORPORATION.ADMIN.FOOTER_BLOCKS.LOGO.HELP
+                    options:
+                        1: PLUGIN_ADMIN.YES
+                        0: PLUGIN_ADMIN.NO
+                    validate:
+                        type: bool
+                .icons:
+                    type: toggle
+                    toggleable: false
+                    label: THEME_X_CORPORATION.ADMIN.FOOTER_BLOCKS.ICONS.LABEL
+                    help: THEME_X_CORPORATION.ADMIN.FOOTER_BLOCKS.ICONS.HELP
+                    options:
+                        1: PLUGIN_ADMIN.YES
+                        0: PLUGIN_ADMIN.NO
+                    validate:
+                        type: bool

@@ -1,3 +1,12 @@
+# v1.1.0
+## 30/01/2017
+
+1. [](#bugfix)
+    * Fixed missing image in header
+1. [](#improved)
+    * Improvements in blueprints
+    * Language file added
+
 # v1.0.3
 ## 15/09/2016
 

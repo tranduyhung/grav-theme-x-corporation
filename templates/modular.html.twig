@@ -2,7 +2,7 @@
 
 {% block content %}
 {% if page.header.background_image != '' %}
-    {% set background_html = 'style="background-image: url(..' ~ page.media.images[page.header.background_image].url ~ ');"' %}
+    {% set background_html = 'style="background-image: url(' ~ page.media.images[page.header.background_image].url ~ ');"' %}
 {% else %}
     {% set  background_html = "" %}
 {% endif %}

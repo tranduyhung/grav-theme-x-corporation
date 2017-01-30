@@ -3,21 +3,23 @@ title: About
     type: default
 
 form:
-  fields:
-    tabs:
-      type: tabs
-      active: 1
-      fields:
-        columns:
-          type: tab
-          title: About Content
-          fields:
-            header.columns:
-              name: columns
-              type: list
-              label: Columns
-              fields:
-                .content:
-                  type: textarea
-                  label: Content
-                  help: Column's content.
+    fields:
+        tabs:
+            type: tabs
+            active: 1
+            fields:
+                columns:
+                    type: tab
+                    title: THEME_X_CORPORATION.ADMIN.COLUMNS.LABEL
+                    fields:
+                        header.columns:
+                            name: columns
+                            type: list
+                            style: vertical
+                            label: THEME_X_CORPORATION.ADMIN.COLUMNS.LABEL
+                            fields:
+                                .content:
+                                    type: textarea
+                                    rows: 5
+                                    label: THEME_X_CORPORATION.ADMIN.CONTENT.LABEL
+                                    help: THEME_X_CORPORATION.ADMIN.CONTENT.HELP

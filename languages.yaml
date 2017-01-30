@@ -1,0 +1,173 @@
+en:
+    THEME_X_CORPORATION:
+        ADMIN:
+            CONTENT:
+                LABEL: Content
+                HELP: Text or HTML code.
+            LOGO:
+                LABEL: Logo
+                HELP: Image used as site's logo
+            COPYRIGHT_TEXT:
+                LABEL: Copyright Text
+                HELP: Text or HTML code
+            GOOGLE_MAPS_API_KEY:
+                LABEL: Google Maps API Key
+                HELP: Get your Google Maps API key at https://console.developers.google.com/
+            FOOTER_ICONS:
+                LABEL: Footer's Icons
+                HELP: Shown in footer block.
+                ICON:
+                    LABEL: Font Awesome's Icon
+                    HELP: 'fa-facebook'
+                URL:
+                    LABEL: Link
+                    HELP: 'https://www.facebook.com/your-page'
+            FOOTER_BLOCKS:
+                LABEL: Footer's Blocks
+                HELP: Shown in footer.
+                TITLE:
+                    LABEL: Title
+                    HELP: Block title.
+                LOGO:
+                    LABEL: Show Logo
+                    HELP: Show site's logo.
+                ICONS:
+                    LABEL: Show Footer Icons
+                    HELP: Show footer's icons.
+            COLUMNS:
+                LABEL: Columns
+            CLIENTS:
+                LABEL: Clients
+                NAME:
+                    LABEL: Name
+                    HELP: Client's name.
+                IMAGE:
+                    LABEL: Image
+                    HELP: Client's image.
+                URL:
+                    LABEL: Website
+                    HELP: Client's website.
+            SLIDES:
+                LABEL: Slides
+                HEADING:
+                    LABEL: Heading
+                    HELP: Slide's heading.
+                DESCRIPTION:
+                    LABEL: Description
+                    HELP: Slide's description.
+                BACKGROUND_IMAGE:
+                    LABEL: Background Image
+                    HELP: Slide's background image.
+                BACKGROUND_IMAGE_DESCRIPTION:
+                    LABEL: Background Image's Description
+                    HELP: Description for slide's background image.
+            FEATURES:
+                LABEL: Features
+                ICON:
+                    LABEL: FontAwesome Icon
+                    HELP: 'Example: fa-line-chart.'
+                DESCRIPTION:
+                    LABEL: Description
+                    HELP: Feature's description.
+                TITLE:
+                    LABEL: Title
+                    HELP: Feature's title.
+            GOOGLE_MAPS:
+                LABEL: Google Maps
+            LATITUDE:
+                LABEL: Latitude
+                HELP: Location's latitude.
+            LONGITUDE:
+                LABEL: Longitude
+                HELP: Location's longitude.
+            ZOOM:
+                LABEL: Zoom Level
+                HELP: Enter a number, for example 10.
+            MARKER:
+                LABEL: Marker Image
+                HELP: Image for location's marker in the same folder.
+            API_KEY:
+                LABEL: Google Maps API Key
+                HELP: Google Maps API key.
+            SERVICES:
+                LABEL: Services
+                TITLE:
+                    LABEL: Title
+                    HELP: Service's title.
+                DESCRIPTION:
+                    LABEL: Description
+                    HELP: Service's description.
+                URL:
+                    LABEL: URL
+                    HELP: URL to service page.
+                IMAGE:
+                    LABEL: Image
+                    HELP: Service's image.
+            SKILLS:
+                LABEL: Skills
+                NAME:
+                    LABEL: Name
+                    HELP: Skill's name.
+                PERCENTAGE:
+                    LABEL: Percentage
+                    HELP: Skill's percentage.
+            SOLUTIONS:
+                LABEL: Solutions
+                TITLE:
+                    LABEL: Title
+                    HELP: Solution's title.
+                DESCRIPTION:
+                    LABEL: Description
+                    HELP: Solution's description.
+                ICON:
+                    LABEL: FontAwesome Icon
+                    HELP: 'Example: fa-line-chart.'
+            HOWS:
+                HOW_HEADING:
+                    LABEL: How Heading
+                    HELP: How's heading.
+                HOWS:
+                    LABEL: How
+                    TITLE:
+                        LABEL: Title
+                        HELP: Title.
+                    DESCRIPTION:
+                        LABEL: Description
+                        HELP: Description.
+            WHYS:
+                WHY_HEADING:
+                    LABEL: Why Heading
+                    HELP: Why's heading.
+                WHYS:
+                    LABEL: Why
+                    TITLE:
+                        LABEL: Title
+                        HELP: Title.
+                    DESCRIPTION:
+                        LABEL: Description
+                        HELP: Description.
+            MEMBERS:
+                LABEL: Members
+                NAME:
+                    LABEL: Name
+                    HELP: Member's name.
+                POSITION:
+                    LABEL: Position
+                    HELP: Member's position.
+                URL:
+                    LABEL: URL
+                    HELP: URL of member page.
+                IMAGE:
+                    LABEL: Image
+                    HELP: Member's image.
+            TESTIMONIALS:
+                LABEL: Testimonials
+                NAME:
+                    LABEL: Name
+                    HELP: Client's name.
+                DESCRIPTION:
+                    LABEL: Testimonial
+                    HELP: Client's testimonial.
+                IMAGE:
+                    LABEL: Image
+                    HELP: Client's image.
