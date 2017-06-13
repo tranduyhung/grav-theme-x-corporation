@@ -1,3 +1,10 @@
+# v1.1.1
+## 13/06/2017
+
+1. [](#improved)
+    * Loaded Grav's jQuery to fix conflict with Featherlight plugin
+
+
 # v1.1.0
 ## 30/01/2017
 
