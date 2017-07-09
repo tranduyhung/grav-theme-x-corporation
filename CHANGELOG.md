@@ -1,3 +1,10 @@
+# v1.1.2
+## 09/07/2017
+
+1. [](#improved)
+    * Added Polish translation, thanks to AvantaR
+
+
 # v1.1.1
 ## 13/06/2017
 
