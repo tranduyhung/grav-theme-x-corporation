@@ -171,3 +171,176 @@ en:
                 IMAGE:
                     LABEL: Image
                     HELP: Client's image.
+pl:
+    THEME_X_CORPORATION:
+        ADMIN:
+            CONTENT:
+                LABEL: Treść
+                HELP: Tekst lub kod HTML.
+            LOGO:
+                LABEL: Logo
+                HELP: Grafika użyta jako logo strony
+            COPYRIGHT_TEXT:
+                LABEL: Tekst "Prawa autorskie"
+                HELP: Tekst lub kod HTML
+            GOOGLE_MAPS_API_KEY:
+                LABEL: Klucz Google Maps API
+                HELP: Pobierz swój klucz Google Maps API na https://console.developers.google.com/
+            FOOTER_ICONS:
+                LABEL: Ikony stopki
+                HELP: Pokazane w bloku stopki
+                ICON:
+                    LABEL: Font Awesome's Icon
+                    HELP: 'fa-facebook'
+                URL:
+                    LABEL: Link
+                    HELP: 'https://www.facebook.com/your-page'
+            FOOTER_BLOCKS:
+                LABEL: Bloki stopki
+                HELP: Pokazane w stopce.
+                TITLE:
+                    LABEL: Tytył
+                    HELP: Blok tytułu.
+                LOGO:
+                    LABEL: Pokaż logo
+                    HELP: Pokaż logo strony.
+                ICONS:
+                    LABEL: Pokaż ikony stopki
+                    HELP: Pokaż ikony stopki.
+            COLUMNS:
+                LABEL: Kolumny
+            CLIENTS:
+                LABEL: Klienci
+                NAME:
+                    LABEL: Nazwa
+                    HELP: Nazwa klienta.
+                IMAGE:
+                    LABEL: Obraz
+                    HELP: Obraz klienta.
+                URL:
+                    LABEL: Strona internetowa
+                    HELP: Strona internetowa klienta.
+            SLIDES:
+                LABEL: Slajdy
+                HEADING:
+                    LABEL: Nagłówek
+                    HELP: Nagłówek slajdu.
+                DESCRIPTION:
+                    LABEL: Opis
+                    HELP: Opis slajdu.
+                BACKGROUND_IMAGE:
+                    LABEL: Obraz w tle
+                    HELP: Obraz w tle slajdu.
+                BACKGROUND_IMAGE_DESCRIPTION:
+                    LABEL: Opis obrazu w tle
+                    HELP: Opis obrazu w tle slajdu.
+            FEATURES:
+                LABEL: Funkcjonalności
+                ICON:
+                    LABEL: FontAwesome Icon
+                    HELP: 'Przykład: fa-line-chart.'
+                DESCRIPTION:
+                    LABEL: Opis
+                    HELP: Opis funkcjonalności.
+                TITLE:
+                    LABEL: Tytuł
+                    HELP: Tytuł funkcjonalności.
+            GOOGLE_MAPS:
+                LABEL: Mapy Google
+            LATITUDE:
+                LABEL: Szerokość geograficzna
+                HELP: Szerokość geograficzna lokalizacji.
+            LONGITUDE:
+                LABEL: Długość geograficzna
+                HELP: Długość geograficzna lokalizacji.
+            ZOOM:
+                LABEL: Przybliżenie
+                HELP: Podaj wartość, na przykład 10.
+            MARKER:
+                LABEL: Grafika markera
+                HELP: Grafika markera lokalizacji.
+            API_KEY:
+                LABEL: Klucz Google Maps API
+                HELP: Klucz Google Maps API.
+            SERVICES:
+                LABEL: Usługi
+                TITLE:
+                    LABEL: Nazwa
+                    HELP: Nazwa usługi.
+                DESCRIPTION:
+                    LABEL: Opis usługi
+                    HELP: Opis usługi.
+                URL:
+                    LABEL: Adres URL
+                    HELP: Adres URL do strony usługi.
+                IMAGE:
+                    LABEL: Grafika
+                    HELP: Grafika usługi.
+            SKILLS:
+                LABEL: Umiejętności
+                NAME:
+                    LABEL: Nazwa
+                    HELP: Nazwa umiejętności.
+                PERCENTAGE:
+                    LABEL: Procent
+                    HELP: Procent umiejętności.
+            SOLUTIONS:
+                LABEL: Rozwiązania
+                TITLE:
+                    LABEL: Tytuł
+                    HELP: Tytuł rozwiązania.
+                DESCRIPTION:
+                    LABEL: Opis
+                    HELP: Opis rozwiązania.
+                ICON:
+                    LABEL: FontAwesome Icon
+                    HELP: 'Przykład: fa-line-chart.'
+            HOWS:
+                HOW_HEADING:
+                    LABEL: Nagłówek "Jak"
+                    HELP: Nagłówek sekcji "Jak".
+                HOWS:
+                    LABEL: Jak
+                    TITLE:
+                        LABEL: Tytuł
+                        HELP: Tytuł.
+                    DESCRIPTION:
+                        LABEL: Opis
+                        HELP: Opis.
+            WHYS:
+                WHY_HEADING:
+                    LABEL: Nagłówek "Dlaczego"
+                    HELP: Nagłówek sekcji "Dlaczego".
+                WHYS:
+                    LABEL: Dlaczego
+                    TITLE:
+                        LABEL: Tytuł
+                        HELP: Tytuł.
+                    DESCRIPTION:
+                        LABEL: Opis
+                        HELP: Opis.
+            MEMBERS:
+                LABEL: Członkowie
+                NAME:
+                    LABEL: Nazwa
+                    HELP: Nazwa członka.
+                POSITION:
+                    LABEL: Stanowisko
+                    HELP: Stanowisko członka.
+                URL:
+                    LABEL: Adres URL strony internetowej
+                    HELP: Adres URL strony internetowej członka.
+                IMAGE:
+                    LABEL: Obraz
+                    HELP: Obraz członka.
+            TESTIMONIALS:
+                LABEL: Referencje
+                NAME:
+                    LABEL: Nazwa
+                    HELP: Nazwa klienta.
+                DESCRIPTION:
+                    LABEL: Referencja
+                    HELP: Referencja klienta.
+                IMAGE:
+                    LABEL: Obraz
+                    HELP: Obraz klienta.
