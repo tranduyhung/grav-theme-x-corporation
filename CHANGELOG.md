@@ -1,3 +1,9 @@
+# v1.1.3
+## xx/xx/2017
+
+1. [](#improved)
+    * Added support for Langswitcher
+
 # v1.1.2
 ## 09/07/2017
 
