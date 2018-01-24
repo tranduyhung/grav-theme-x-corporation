@@ -1,3 +1,10 @@
+# v1.1.3
+## 01/24/2018
+
+1. [](#bugfix)
+    * Fixed logo and icons not shown in footer
+
+
 # v1.1.2
 ## 09/07/2017
 

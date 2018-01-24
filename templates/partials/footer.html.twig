@@ -9,7 +9,7 @@
                         {% if block.title %}
                         <h3>{{ block.title }}</h3>
                         {% endif %}
-                        {% if block.logo is null %}
+                        {% if block.logo %}
                         <div class="footer-logo">
                             <a href="{{ base_url == '' ? '/' : base_url }}">
                                 <img src="{{ url('theme://img/' ~ theme_config.logo) }}" alt="">
@@ -19,7 +19,7 @@
                         {% if block.content %}
                         {{ block.content }}
                         {% endif %}
-                        {% if block.icons is null and theme_config.footer_icons|length > 0 %}
+                        {% if block.icons and theme_config.footer_icons|length > 0 %}
                         <ul class="list-inline social-links">
                             {% for icon in theme_config.footer_icons %}
                             <li><a href="{{ icon.url }}"><i class="fa {{ icon.icon }}"></i></a></li>
