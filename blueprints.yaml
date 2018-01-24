@@ -1,11 +1,11 @@
 name: X-Corporation
 description: "Grav Theme based on X-Corporation HTML theme of uiCookies."
-version: 1.1.3
+version: 1.2.0
 icon: briefcase
 author:
   name: Hung Tran
-  email: hungtran@peaceofmindwebsite.com
-  url: http://www.peaceofmindwebsite.com
+  email: flatfiledeveloper@gmail.com
+  url: https://flatfiledeveloper.com/
 homepage: https://github.com/tranduyhung/grav-theme-x-corporation
 demo: http://www.peaceofmindwebsite.com/skeletons/x-corporation
 keywords: corporate, corporation, theme, template, bootstrap, responsive, html5, uicookies, business, agency, lightweight, fast, company, tech startup, consultancy, firm, creative, studio,
@@ -15,14 +15,21 @@ license: MIT
 form:
     validation: loose
     fields:
+        favicon:
+            type: file
+            destination: 'user/themes/x-corporation/img'
+            multiple: false
+            accept:
+                - image/*
+            label: THEME_X_CORPORATION.ADMIN.FAVICON.LABEL
+            help: THEME_X_CORPORATION.ADMIN.FAVICON.HELP
+        copyright:
         logo:
-            type: filepicker
-            folder: 'theme@:/img'
-            preview_images: true
-            acccept:
-                - .png
-                - .jpg
-                - .gif
+            type: file
+            destination: 'user/themes/x-corporation/img'
+            multiple: false
+            accept:
+                - image/*
             label: THEME_X_CORPORATION.ADMIN.LOGO.LABEL
             help: THEME_X_CORPORATION.ADMIN.LOGO.HELP
         copyright:

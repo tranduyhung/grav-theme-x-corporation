@@ -171,6 +171,9 @@ en:
                 IMAGE:
                     LABEL: Image
                     HELP: Client's image.
+            FAVICON:
+                LABEL: favicon
+                HELP: Image used as site's favicon
 pl:
     THEME_X_CORPORATION:
         ADMIN:

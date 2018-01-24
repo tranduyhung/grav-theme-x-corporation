@@ -1,3 +1,11 @@
+# v1.2.0
+## 01/24/2018
+
+1. [](#improved)
+    * Added favicon option
+    * Added metadata tags
+
+
 # v1.1.3
 ## 01/24/2018
 

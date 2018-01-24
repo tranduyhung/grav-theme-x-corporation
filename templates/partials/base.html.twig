@@ -1,4 +1,22 @@
+{% spaceless %}
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+
+{% set logo = '' %}
+{% if theme_config.logo is iterable %}
+    {% for file in theme_config.logo %}
+        {% set logo = file.name %}
+    {% endfor %}
+{% else %}
+    {% set logo = theme_config.logo %}
+{% endif %}
+
+{% set favicon = '' %}
+{% if theme_config.favicon|length > 0 %}
+    {% for file in theme_config.favicon %}
+        {% set favicon = file.name %}
+    {% endfor %}
+{% endif %}
+{% endspaceless %}
 <!DOCTYPE HTML>
 <html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
     <head>
