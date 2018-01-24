@@ -1,3 +1,10 @@
+# v1.2.1
+## 01/24/2018
+
+1. [](#bugfix)
+    * Fixed default logo and favicon
+
+
 # v1.2.0
 ## 01/24/2018
 
