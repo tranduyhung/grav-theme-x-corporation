@@ -4,8 +4,9 @@
 1. [](#bugfix)
     * Fixed problems with Bootstrap CDN
 1. [](#improved)
-    * Removed smoothscroll.js
+    * Removed smoothscroll.js (thanks to @jodumont)
     * Updated Form plugin's overrides
+    * Added custom.css support (thanks to @timrobbings)
 
 
 # v1.2.1
