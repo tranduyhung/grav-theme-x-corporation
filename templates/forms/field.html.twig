@@ -1,5 +1,16 @@
 {% set originalValue = originalValue is defined ? originalValue : value %}
-{% set value = (value is null ? field.default : value) %}
+{% set toggleableChecked = field.toggleable and (originalValue is not null and originalValue is not empty) %}
+{% set isDisabledToggleable = field.toggleable and not toggleableChecked %}
+{% set value = (is_object(value) or value is null ? field.default : value) %}
+{% set cookie_name = 'forms-' ~ form.name ~ '-' ~ field.name %}
+{% set value = (is_object(value) or value is null ? (get_cookie(cookie_name) is null ? field.default : get_cookie(cookie_name)) : value) %}
+{% set errors = attribute(form.messages, field.name) %}
+{% set required = client_side_validation and field.validate.required in ['on', 'true', 1] %}
+{% set autofocus = (inline_errors == false) and field.autofocus in ['on', 'true', 1] %}
+
+{% if inline_errors and errors %}
+    {% set autofocus = true %}
+{% endif %}
 
 {% block field %}
     {% block contents %}

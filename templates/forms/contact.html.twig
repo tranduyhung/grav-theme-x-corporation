@@ -1,13 +1,14 @@
-{% if form.message %}
-    {% if form.inline_errors and form.messages %}
-        <div class="alert notices {{ form.message_color ?: 'green' }}"><p>{{ "FORM.VALIDATION_FAIL"|t|raw }}</p></div>
-    {% else %}
-        <div class="alert notices {{ form.message_color ?: 'green' }}"><p>{{ form.message|raw }}</p></div>
-    {% endif %}
-{% endif %}
+{% if form is null %}
+    {% set form = grav.session.getFlashObject('form') %}
+{% endif  %}
+
+{% include 'partials/form-messages.html.twig' %}
+
 {% set scope = scope ?: 'data.' %}
 {% set multipart = '' %}
 {% set method = form.method|upper|default('POST') %}
+{% set client_side_validation = form.client_side_validation is not null ? form.client_side_validation : config.plugins.form.client_side_validation|default(true) %}
+{% set inline_errors = form.inline_errors is not null ? form.inline_errors : config.plugins.form.inline_errors(false) %}
 
 {% for field in form.fields %}
     {% if (method == 'POST' and field.type == 'file') %}
@@ -15,7 +16,7 @@
     {% endif %}
 {% endfor %}
 
-{% set action = form.action ? base_url ~ form.action : uri.url() %}
+{% set action = form.action ? base_url ~ form.action : base_url ~ page.route ~ uri.params %}
 
 {% if (action == base_url_relative) %}
     {% set action = base_url_relative ~ '/' ~ page.slug %}
@@ -77,5 +78,6 @@
   </div>
   {% endblock %}
 
+  {% include 'forms/fields/uniqueid/uniqueid.html.twig' %}
   {{ nonce_field('form', 'form-nonce')|raw }}
 </form>
