@@ -1,13 +1,13 @@
 name: X-Corporation
 description: "Grav Theme based on X-Corporation HTML theme of uiCookies."
-version: 1.2.1
+version: 1.2.3
 icon: briefcase
 author:
   name: Hung Tran
   email: flatfiledeveloper@gmail.com
   url: https://flatfiledeveloper.com/
 homepage: https://github.com/tranduyhung/grav-theme-x-corporation
-demo: http://www.peaceofmindwebsite.com/skeletons/x-corporation
+demo: https://grav-theme-x-corporation.flatfiledeveloper.com/
 keywords: corporate, corporation, theme, template, bootstrap, responsive, html5, uicookies, business, agency, lightweight, fast, company, tech startup, consultancy, firm, creative, studio,
 bugs: https://github.com/tranduyhung/grav-theme-x-corporation/issues
 license: MIT

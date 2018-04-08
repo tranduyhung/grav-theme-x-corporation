@@ -1,3 +1,13 @@
+# v1.2.3
+## 04/08/2018
+
+1. [](#bugfix)
+    * Fixed problems with Bootstrap CDN
+1. [](#improved)
+    * Removed smoothscroll.js
+    * Updated Form plugin's overrides
+
+
 # v1.2.1
 ## 01/24/2018
 
