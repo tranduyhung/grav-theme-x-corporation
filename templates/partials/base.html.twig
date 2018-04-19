@@ -1,6 +1,8 @@
 {% spaceless %}
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 
+{% set logo = "" %}
+
 {% if theme_config.logo is iterable %}
     {% for file in theme_config.logo %}
         {% set logo = file.name %}
@@ -12,6 +14,8 @@
 {% if logo is empty %}
     {% set logo = 'logo.png' %}
 {% endif %}
+
+{% set favicon = "" %}
 
 {% if theme_config.favicon|length > 0 %}
     {% for file in theme_config.favicon %}
