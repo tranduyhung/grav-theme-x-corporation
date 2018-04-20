@@ -1,3 +1,10 @@
+# v1.2.4
+## 04/20/2018
+
+1. [](#bugfix)
+    * Fixed for custom logo and favicon not showing (thanks to @Ahuahuachi)
+
+
 # v1.2.3
 ## 04/08/2018
 
