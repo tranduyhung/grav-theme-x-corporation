@@ -69,7 +69,7 @@
     }
 
 .slide-along .uc-offcanvas-container {
-    position           : absolute;
+    position           : fixed;
     top                : 0;
     left               : 0;
     visibility         : hidden;
@@ -82,6 +82,7 @@
     -moz-transition    : all 400ms;
     -o-transition      : all 400ms;
     transition         : all 400ms;
+    z-index            : 2;
     }
 
 .uc-offcanvas-container > div {
