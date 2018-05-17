@@ -12,6 +12,16 @@ form:
                     type: tab
                     title: THEME_X_CORPORATION.ADMIN.CLIENTS.LABEL
                     fields:
+                        header.num_per_row: 
+                            type: toggle
+                            label: THEME_X_CORPORATION.ADMIN.NUM_PER_ROW.LABEL
+                            highlight: 1
+                            help: THEME_X_CORPORATION.ADMIN.NUM_PER_ROW.HELP
+                            options:
+                                3: 3
+                                4: 4
+                                6: 6
+                            default: 6
                         header.clients:
                             name: clients
                             type: list
