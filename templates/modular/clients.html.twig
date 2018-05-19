@@ -1,3 +1,4 @@
+{% set client_size = 12/page.header.num_per_row %}
 <section class="client-logo ptb-100">
     <section class="section-title">
         <div class="container text-center">
@@ -6,15 +7,17 @@
         </div>
     </section>
     <div class="container">
-        <div class="row">
-            {% for client in page.header.clients %}
-            <div class="col-md-2 col-sm-4 col-xs-6 section-margin">
-                <a href="{{ client.url }}">
-                    {{ page.media.images[client.image].html('', client.name) }}
-                </a>
+        {% for row in page.header.clients|batch(page.header.num_per_row) %}
+            <div class="row">
+                {% for client in row %}
+                    <div class="col-md-{{client_size}} col-sm-4 col-xs-6 section-margin client">
+                        <a href="{{ client.url }}">
+                            {{ page.media.images[client.image].html('', client.name) }}
+                        </a>
+                    </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
+        {% endfor %}
     </div>
     <!--end of .container -->
 </section>

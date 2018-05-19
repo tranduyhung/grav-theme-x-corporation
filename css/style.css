@@ -1027,7 +1027,15 @@ Team
 .client-logo a:hover img {
     opacity : 1;
     }
-
+/* vertical align for client logo */
+.client-logo .row {
+    display: table-row;
+}
+.client-logo .row .client {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+}
 @media (max-width : 992px) {
     .client-logo .section-margin {
         margin-bottom : 30px;
@@ -1606,4 +1614,5 @@ service-icon-style
     margin: 0;
     text-align: center;
     top: 65%;
-    }
+}
+
