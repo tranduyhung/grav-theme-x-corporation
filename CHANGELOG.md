@@ -1,3 +1,10 @@
+# v1.3.0
+## 05/19/2018
+
+1. [](#improved)
+    * Improved mobile menu behaviour when page scrolled (thanks to @timrobbings)
+    * Added ability to configure how many clients are shown per row (thanks to @trangthaonguyen)
+
 # v1.2.4
 ## 04/20/2018
 
