@@ -152,6 +152,8 @@
     -ms-transition     : -webkit-transform 400ms;
     -o-transition      : -webkit-transform 400ms;
     transition         : transform 400ms;
+    position           : fixed;
+    z-index            : 2;
     }
 
 .slide-along .uc-offcanvas-container::after {

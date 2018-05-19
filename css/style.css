@@ -282,7 +282,7 @@ BACK TO TOP
     color       : #31aae2;
     cursor      : pointer;
     display     : none;
-    z-index     : 9999;
+    z-index     : 1;
     width       : 30px;
     height      : 30px;
     border      : 2px solid #31aae2;
