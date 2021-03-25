@@ -17,7 +17,7 @@
 {% do assets.add('theme://css/style.css', 101) %}
 {% do assets.add('theme://css/mobile-menu.css', 101) %}
 {% do assets.add('theme://css/custom.css', 101) %}
- {{ assets.css() }}
+ {{ assets.css()|raw }}
 {% endblock %}
 
 {% block javascripts %}
@@ -31,7 +31,7 @@
     {% do assets.add('theme://js/flexSlider/jquery.flexslider-min.js') %}
     {% do assets.add('theme://js/scripts.js') %}
 
-    {{ assets.js() }}
+    {{ assets.js()|raw }}
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 {% endblock %}
