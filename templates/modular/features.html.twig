@@ -1,7 +1,7 @@
 <section class="x-features">
     <section class="section-title">
         <div class="container text-center">
-            <h2>{{ page.title }}</h2>
+            <h2>{{ page.title|raw }}</h2>
             <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span>
         </div>
     </section>
@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-6 img-left">
                 {% if page.header.image != '' %}
-                {{ page.media.images[page.header.image].html() }}
+                {{ page.media.images[page.header.image].html()|raw }}
                 {% endif %}
             </div>
             <div class="col-md-6">
@@ -21,9 +21,9 @@
                         {% endif %}
                     </div>
                     <div class="promo-content">
-                        <h3>{{ feature.title }}</h3>
+                        <h3>{{ feature.title|raw }}</h3>
 
-                        <p>{{ feature.description }}</p>
+                        <p>{{ feature.description|raw }}</p>
                     </div>
                 </div>
                 {% endfor %}

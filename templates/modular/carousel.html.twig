@@ -10,12 +10,12 @@
         {% for slide in page.header.slides %}
         {% set slideClass = loop.index == 1 ? 'item active' : 'item' %}
         <div class="{{ slideClass }}">
-            {{ page.media.images[slide.background_image].html('', slide.background_image_description) }}
+            {{ page.media.images[slide.background_image].html('', slide.background_image_description)|raw }}
 
             <div class="carousel-caption">
-                <h1>{{ slide.heading }}</h1>
+                <h1>{{ slide.heading|raw }}</h1>
 
-                <p>{{ slide.description }}</p>
+                <p>{{ slide.description|raw }}</p>
             </div>
         </div>
         {% endfor %}

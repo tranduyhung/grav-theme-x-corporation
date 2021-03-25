@@ -1,7 +1,7 @@
 <section class="testimonial">
     <section class="section-title">
         <div class="container text-center">
-            <h2>{{ page.title }}</h2>
+            <h2>{{ page.title|raw }}</h2>
             <span class="bordered-icon"><i class="fa fa-circle-thin"></i></span>
         </div>
     </section>
@@ -14,10 +14,10 @@
                 <div class="{{ slideClass }}">
                     <blockquote>
                         <ul>
-                            <li>{{ page.media.images[slide.image].html() }}</li>
-                            <li class="name">{{ slide.name }}</li>
+                            <li>{{ page.media.images[slide.image].html()|raw }}</li>
+                            <li class="name">{{ slide.name|raw }}</li>
                         </ul>
-                        <p>{{ slide.description }}</p>
+                        <p>{{ slide.description|raw }}</p>
                     </blockquote>
                 </div>
                 {% endfor %}
